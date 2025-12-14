@@ -9,8 +9,8 @@
   <body class="bg-black/80">
     <div class="p-8 sm:flex gap-32">
       <button
-        class="peer/button mt-5 border border-emerald-500 bg-emerald-100 rounded-lg ml-5 mb-10 hover:border-red-600 hover:cursor-pointer hover:bg-red-500 hover:text-white hover:ring-1 hover:ring-red-700 hover:transition-all duration-1000 sm:h-10 sm:mt-20"
-        onmouseover="this.innerHTML='Leave me to turn off'"
+        class="peer/button mt-5 border border-emerald-500 bg-emerald-100 rounded-lg ml-5 mb-10 focus:border-red-600 focus:cursor-pointer focus:bg-red-500 focus:text-white focus:ring-1 focus:ring-red-700 focus:transition-all duration-1000 sm:h-10 sm:mt-20"
+        onmousedown="this.innerHTML='Touch any where to stop'"
         onmouseleave="this.innerHTML='Touch me to turn on fan'"
       >
         Touch me to turn on fan
@@ -18,7 +18,7 @@
       <img
         src="../css/fan.png"
         alt=""
-        class="peer-hover/button:animate-spin peer-hover/button:[animation-duration:0.6s] size-52"
+        class="peer-focus/button:animate-spin peer-focus/button:[animation-duration:0.6s] size-52"
       />
     </div>
   </body>
