@@ -17,19 +17,21 @@
     <style></style>
   </head>
   <body>
-    <div class="bg-green-500 h-10">
-      <h4 class="text-md text-white font-cursive inline-block">RAM SARAN</h4>
+    <header class="bg-green-950 h-10 w-full">
+      <h4 class="text-md text-white font-cursive inline-block mt-2">
+        RAM SARAN
+      </h4>
 
       <span
         id="nav"
-        class="sm:hidden text-white hover:scale-105 transition-all duration-700 cursor-pointer z-20 float-end mr-2"
+        class="sm:hidden text-white hover:scale-105 transition-all duration-700 cursor-pointer z-20 float-end mr-2 mt-2"
       >
         <i class="fa-solid fa-bars"></i>
       </span>
 
       <div
         id="dropdown"
-        class="absolute top-10 left-0 w-full bg-green-500 flex flex-col items-center py-4 opacity-0 invisible -translate-y-2 transition-all duration-700 ease-in z-10 sm:opacity-100 sm:visible sm:flex sm:flex-row sm:h-10 sm:justify-end sm:bg-transparent sm:top-2"
+        class="absolute top-10 left-0 w-full bg-green-950/90 flex flex-col items-center py-4 opacity-0 invisible -translate-y-2 transition-all duration-700 ease-in z-10 sm:opacity-100 sm:visible sm:flex sm:flex-row sm:h-10 sm:justify-end sm:bg-transparent sm:top-2"
       >
         <a
           href=""
@@ -52,7 +54,22 @@
           >Links</a
         >
       </div>
-    </div>
+    </header>
+
+    <main>
+      <div
+        class="h-80 w-full bg-green-950 border border-t-white flex flex-col items-center"
+      >
+        <pre class="align-middle text-white font-bold mt-5">
+  Divya Ram Saran 
+Full-Stack Developer</pre
+        >
+
+        <picture class="h-60 w-35 rounded-full bg-white mt-5">
+          <img src="./image.png" alt="" class="object-cover mt-2" />
+        </picture>
+      </div>
+    </main>
 
     <script>
       const navBar = document.querySelector("#nav");
