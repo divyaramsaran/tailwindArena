@@ -14,7 +14,55 @@
       referrerpolicy="no-referrer"
     />
 
-    <style></style>
+    <style>
+      .carosel {
+        margin-top: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        overflow: hidden;
+      }
+
+      .carosel::-webkit-scrollbar {
+        display: none;
+      }
+
+      .group {
+        display: flex;
+        gap: 1em;
+        padding-right: 1em;
+        flex: 0 0 auto;
+      }
+
+      .card {
+        flex: 0 0 5em;
+        padding: 1em;
+        height: 80px;
+      }
+
+      .track {
+        display: flex;
+        width: max-content;
+        --scroll-distance: 50%;
+        --scroll-duration: 20s;
+        --scroll-nudge: 0px;
+        animation: scroll var(--scroll-duration) linear infinite;
+        will-change: transform;
+        backface-visibility: hidden;
+        transform: translateZ(0);
+      }
+
+      @keyframes scroll {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(
+            calc(-1 * var(--scroll-distance) - var(--scroll-nudge))
+          );
+        }
+      }
+    </style>
   </head>
   <body class="font-lora">
     <header class="bg-stone-800 h-10 w-full">
@@ -58,7 +106,7 @@
 
     <main>
       <div
-        class="h-180 w-full bg-stone-800 border border-t-white flex flex-col items-center border-b-stone-800"
+        class="h-180 w-full bg-stone-800 border border-t-white flex flex-col items-center border-b-stone-800 sm:h-90"
       >
         <pre class="align-middle text-white mt-5 text-xl">
   Divya Ram Saran 
@@ -96,40 +144,94 @@ Full-Stack Developer</pre
           </div>
         </div>
       </div>
+
+      <div class="-mt-1">
+        <svg
+          class="hero bg-stone-800 w-full h-16"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 24 150 28"
+          preserveAspectRatio="none"
+        >
+          <defs>
+            <path
+              id="wave-path"
+              d="M-160 44c30 0 58-18 88-18s58 18 88 18 58-18 88-18 58 18 88 18v44h-352z"
+            ></path>
+          </defs>
+          <g>
+            <use
+              xlink:href="#wave-path"
+              x="50"
+              y="3"
+              fill="rgba(209,213,219,0.1)"
+            ></use>
+          </g>
+          <g>
+            <use
+              xlink:href="#wave-path"
+              x="50"
+              y="8"
+              fill="rgba(255,255,255,1)"
+            ></use>
+          </g>
+        </svg>
+      </div>
     </main>
 
-    <div class="">
-      <svg
-        class="hero bg-stone-800 w-full h-16"
-        xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
-        viewBox="0 24 150 28"
-        preserveAspectRatio="none"
-      >
-        <defs>
-          <path
-            id="wave-path"
-            d="M-160 44c30 0 58-18 88-18s58 18 88 18 58-18 88-18 58 18 88 18v44h-352z"
-          ></path>
-        </defs>
-        <g>
-          <use
-            xlink:href="#wave-path"
-            x="50"
-            y="3"
-            fill="rgba(209,213,219,0.1)"
-          ></use>
-        </g>
-        <g>
-          <use
-            xlink:href="#wave-path"
-            x="50"
-            y="8"
-            fill="rgba(255,255,255,1)"
-          ></use>
-        </g>
-      
-      </svg>
+    <div class="carosel">
+      <div class="track">
+        <div class="group">
+          <div class="card"><img src="./html-5.png" alt="" /></div>
+          <div class="card"><img src="./css-3.png" alt="" /></div>
+          <div class="card"><img src="./js.png" alt="" /></div>
+          <div class="card" style="margin-top: 10px">
+            <img src="./Tailwind CSS Icon.png" alt="" />
+          </div>
+          <div class="card" style="margin-top: 10px">
+            <img src="./postgress.jpg" alt="" />
+          </div>
+          <div class="card"><img src="./Deno JS.png" alt="" /></div>
+          <div class="card"><img src="./java.png" alt="" /></div>
+          <div class="card"><img src="./programing.png" alt="" /></div>
+          <div class="card"><img src="./python.png" alt="" /></div>
+          <div class="card"><img src="./react.png" alt="" /></div>
+        </div>
+
+        <div aria-hidden class="group">
+          <div class="card"><img src="./html-5.png" alt="" /></div>
+          <div class="card"><img src="./css-3.png" alt="" /></div>
+          <div class="card"><img src="./js.png" alt="" /></div>
+          <div class="card" style="margin-top: 10px">
+            <img src="./Tailwind CSS Icon.png" alt="" />
+          </div>
+          <div class="card" style="margin-top: 10px">
+            <img src="./postgress.jpg" alt="" />
+          </div>
+          <div class="card"><img src="./Deno JS.png" alt="" /></div>
+          <div class="card"><img src="./java.png" alt="" /></div>
+          <div class="card"><img src="./programing.png" alt="" /></div>
+          <div class="card"><img src="./python.png" alt="" /></div>
+          <div class="card"><img src="./react.png" alt="" /></div>
+        </div>
+
+        <div aria-hidden class="group">
+          <div class="card"><img src="./html-5.png" alt="" /></div>
+          <div class="card"><img src="./css-3.png" alt="" /></div>
+          <div class="card"><img src="./js.png" alt="" /></div>
+          <div class="card" style="margin-top: 10px">
+            <img src="./Tailwind CSS Icon.png" alt="" />
+          </div>
+          <div class="card" style="margin-top: 10px">
+            <img src="./postgress.jpg" alt="" />
+          </div>
+          <div class="card"><img src="./Deno JS.png" alt="" /></div>
+          <div class="card"><img src="./java.png" alt="" /></div>
+          <div class="card"><img src="./programing.png" alt="" /></div>
+          <div class="card"><img src="./python.png" alt="" /></div>
+          <div class="card"><img src="./react.png" alt="" /></div>
+        </div>
+      </div>
     </div>
 
     <script>
@@ -139,6 +241,22 @@ Full-Stack Developer</pre
         dropDown.classList.toggle("opacity-100");
         dropDown.classList.toggle("visible");
         dropDown.classList.toggle("translate-y-0");
+      });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const track = document.querySelector(".track");
+        const group = document.querySelector(".group");
+        if (!track || !group) return;
+        const setScroll = () => {
+          const groupWidth = group.getBoundingClientRect().width;
+          track.style.setProperty("--scroll-distance", `${groupWidth}px`);
+          track.style.setProperty("--scroll-nudge", `0.5px`);
+          const speed = 20;
+          const duration = Math.max(6, groupWidth / speed);
+          track.style.setProperty("--scroll-duration", `${duration}s`);
+        };
+        setScroll();
+        window.addEventListener("resize", setScroll);
       });
     </script>
   </body>
