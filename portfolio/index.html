@@ -15,6 +15,9 @@
     />
 
     <style>
+      html {
+        scroll-behavior: smooth;
+      }
       .carosel {
         margin-top: 5px;
         display: flex;
@@ -62,11 +65,29 @@
           );
         }
       }
+
+      .view {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: transform 900ms cubic-bezier(0.2, 0.8, 0.2, 1),
+          opacity 700ms ease;
+        transition-delay: 0.6s;
+        will-change: transform, opacity;
+        backface-visibility: hidden;
+        transform: translateZ(0);
+      }
+
+      .view.in-view {
+        opacity: 1;
+        transform: translateY(0);
+      }
     </style>
   </head>
   <body class="font-lora">
     <header class="bg-stone-800 h-10 w-full">
-      <h4 class="text-md text-white inline-block font-cursive mt-2 ml-2">
+      <h4
+        class="text-md text-white inline-block font-cursive mt-2 ml-2 sm:text-xl"
+      >
         RAM SARAN
       </h4>
 
@@ -82,24 +103,24 @@
         class="absolute top-10 left-0 w-full bg-stone-800/90 flex flex-col items-center py-4 opacity-0 invisible -translate-y-2 transition-all duration-700 ease-in z-10 sm:opacity-100 sm:visible sm:flex sm:flex-row sm:h-10 sm:justify-end sm:bg-transparent sm:top-2"
       >
         <a
-          href=""
-          class="text-sm text-white m-2 inline-block hover:bg-white hover:text-black hover:rounded-sm hover:transform all hover:duration-700 hover:-translate-y-1"
+          href="#aboutMe"
+          class="text-sm text-white m-2 inline-block hover:bg-white hover:text-black hover:rounded-sm hover:transform all hover:duration-700 hover:-translate-y-1 sm:text-lg"
           >About Me</a
         >
         <a
-          href=""
-          class="text-sm text-white m-2 inline-block hover:bg-white hover:text-black hover:rounded-sm hover:transform all hover:duration-700 hover:-translate-y-1"
+          href="#techStack"
+          class="text-sm text-white m-2 inline-block hover:bg-white hover:text-black hover:rounded-sm hover:transform all hover:duration-700 hover:-translate-y-1 sm:text-lg"
           >Tech Stack</a
         >
         <a
-          href=""
-          class="text-sm text-white m-2 inline-block hover:bg-white hover:text-black hover:rounded-sm hover:transform all hover:duration-700 hover:-translate-y-1"
+          href="#projects"
+          class="text-sm text-white m-2 inline-block hover:bg-white hover:text-black hover:rounded-sm hover:transform all hover:duration-700 hover:-translate-y-1 sm:text-lg"
           >Projects</a
         >
         <a
-          href=""
-          class="text-sm text-white m-2 inline-block hover:bg-white hover:text-black hover:rounded-sm hover:transform all hover:duration-700 hover:-translate-y-1"
-          >Links</a
+          href="#contact"
+          class="text-sm text-white m-2 inline-block hover:bg-white hover:text-black hover:rounded-sm hover:transform all hover:duration-700 hover:-translate-y-1 sm:text-lg"
+          >Contact</a
         >
       </div>
     </header>
@@ -178,7 +199,7 @@ Full-Stack Developer</pre
         </svg>
       </div>
 
-      <div>
+      <div id="aboutMe">
         <h2
           class="text-3xl text-stone m-2 flex items-center before:h-px before:bg-stone-800 before:flex-1 after:h-px after:bg-stone-800 after:flex-1 mt-5"
         >
@@ -197,7 +218,7 @@ Full-Stack Developer</pre
       </div>
     </main>
 
-    <div>
+    <div id="techStack">
       <h2
         class="text-3xl text-stone m-2 flex items-center before:h-px before:bg-stone-800 before:flex-1 after:h-px after:bg-stone-800 after:flex-1 mt-5"
       >
@@ -260,7 +281,7 @@ Full-Stack Developer</pre
       </div>
     </div>
 
-    <div>
+    <div id="projects">
       <h2
         class="text-3xl text-stone m-2 flex items-center before:h-px before:bg-stone-800 before:flex-1 after:h-px after:bg-stone-800 after:flex-1"
       >
@@ -276,8 +297,8 @@ Full-Stack Developer</pre
         <div
           class="bg-stone-800/80 h-full rounded-lg flex flex-col justify-between"
         >
-          <h1 class="text-3xl p-3 mt-2 sm:text-2xl sm:mt-0">Book Cricket</h1>
-          <h3 class="p-3 mb-2">
+          <h1 class="text-3xsl p-3 mt-2 sm:text-2xl sm:mt-0">Book Cricket</h1>
+          <h3 class="view p-3 mb-2">
             Book Cricket is a fun, console-based JavaScript game where two
             players take turns batting in a simulated cricket match. A coin toss
             decides who bats first, with randomized outcomes for runs, wides,
@@ -298,7 +319,7 @@ Full-Stack Developer</pre
             Event Registration Portal
           </h1>
 
-          <h3 class="p-3 mb-2">
+          <h3 class="p-3 mb-2 view">
             Event Registration Portal is a web platform for admins to manage
             quizzes, competitions, and cultural events. It collects participant
             data through forms, tracks registrations in real-time, and stores
@@ -318,7 +339,7 @@ Full-Stack Developer</pre
             Task Reminder Application
           </h1>
 
-          <h3 class="p-3 mb-2">
+          <h3 class="p-3 mb-2 view">
             Task Reminder Application is a JavaScript console app for managing
             normal (one-time) and recurring tasks with real-time status
             tracking, countdown timers, and interactive menu controls. Users can
@@ -336,7 +357,7 @@ Full-Stack Developer</pre
         >
           <h1 class="text-3xl p-3 mt-2 sm:text-2xl sm:mt-0">BINGO</h1>
 
-          <h3 class="p-3 mb-2">
+          <h3 class="p-3 mb-2 view">
             Bingo Game is a two-player JavaScript console game featuring 5x5
             randomly generated grids displayed side-by-side. Players mark called
             numbers with 🌟 stars in real-time, racing to complete all 25
@@ -346,7 +367,7 @@ Full-Stack Developer</pre
       </div>
     </div>
 
-    <footer class="bg-stone-800 w-full h-170 mt-5 sm:h-90">
+    <footer id="contact" class="bg-stone-800 w-full h-170 mt-5 sm:h-90">
       <h1 class="text-2xl text-white p-5 text-center">
         Got a project idea or job opening?
       </h1>
@@ -404,17 +425,46 @@ Full-Stack Developer</pre
       document.addEventListener("DOMContentLoaded", () => {
         const track = document.querySelector(".track");
         const group = document.querySelector(".group");
-        if (!track || !group) return;
-        const setScroll = () => {
-          const groupWidth = group.getBoundingClientRect().width;
-          track.style.setProperty("--scroll-distance", `${groupWidth}px`);
-          track.style.setProperty("--scroll-nudge", `0.5px`);
-          const speed = 20;
-          const duration = Math.max(6, groupWidth / speed);
-          track.style.setProperty("--scroll-duration", `${duration}s`);
-        };
-        setScroll();
-        window.addEventListener("resize", setScroll);
+
+        if (track && group) {
+          const setScroll = () => {
+            const groupWidth = group.getBoundingClientRect().width;
+            track.style.setProperty("--scroll-distance", `${groupWidth}px`);
+            track.style.setProperty("--scroll-nudge", `0.5px`);
+            const speed = 20;
+            const duration = Math.max(6, groupWidth / speed);
+            track.style.setProperty("--scroll-duration", `${duration}s`);
+          };
+          setScroll();
+          window.addEventListener("resize", setScroll);
+        }
+
+        const views = document.querySelectorAll(".view");
+        if (views.length > 0) {
+          const io = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                const el = entry.target;
+                const delay = parseFloat(el.dataset.delay) || 0.6;
+
+                if (entry.isIntersecting) {
+                  el.style.transitionDelay = `${delay}s`;
+                  el.classList.add("in-view");
+
+                  if (el.dataset.once === "true") {
+                    io.unobserve(el);
+                  }
+                } else {
+                  el.classList.remove("in-view");
+                  el.style.transitionDelay = "";
+                }
+              });
+            },
+            { threshold: 0.2, rootMargin: "0px 0px -10%" }
+          );
+
+          views.forEach((v) => io.observe(v));
+        }
       });
     </script>
   </body>
