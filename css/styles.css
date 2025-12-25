@@ -319,11 +319,17 @@
   .h-60 {
     height: calc(var(--spacing) * 60);
   }
+  .h-90 {
+    height: calc(var(--spacing) * 90);
+  }
   .h-180 {
     height: calc(var(--spacing) * 180);
   }
   .h-fit {
     height: fit-content;
+  }
+  .h-full {
+    height: 100%;
   }
   .w-35 {
     width: calc(var(--spacing) * 35);
@@ -415,6 +421,9 @@
       margin-inline-end: calc(calc(var(--spacing) * 1) * calc(1 - var(--tw-space-x-reverse)));
     }
   }
+  .overflow-x-hidden {
+    overflow-x: hidden;
+  }
   .rounded {
     border-radius: 0.25rem;
   }
@@ -501,6 +510,12 @@
   .bg-stone-800 {
     background-color: var(--color-stone-800);
   }
+  .bg-stone-800\/80 {
+    background-color: color-mix(in srgb, oklch(26.8% 0.007 34.298) 80%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-stone-800) 80%, transparent);
+    }
+  }
   .bg-stone-800\/90 {
     background-color: color-mix(in srgb, oklch(26.8% 0.007 34.298) 90%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
@@ -530,6 +545,15 @@
       --tw-gradient-to: color-mix(in oklab, var(--color-purple-500) 50%, transparent);
     }
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .bg-cover {
+    background-size: cover;
+  }
+  .bg-center {
+    background-position: center;
+  }
+  .bg-no-repeat {
+    background-repeat: no-repeat;
   }
   .object-bottom {
     object-position: bottom;
@@ -883,6 +907,11 @@
       background-color: transparent;
     }
   }
+  .sm\:p-5 {
+    @media (width >= 40rem) {
+      padding: calc(var(--spacing) * 5);
+    }
+  }
   .sm\:text-lg {
     @media (width >= 40rem) {
       font-size: var(--text-lg);
@@ -894,6 +923,11 @@
       opacity: 100%;
     }
   }
+  .lg\:mt-10 {
+    @media (width >= 64rem) {
+      margin-top: calc(var(--spacing) * 10);
+    }
+  }
   .lg\:h-80 {
     @media (width >= 64rem) {
       height: calc(var(--spacing) * 80);
@@ -902,6 +936,11 @@
   .lg\:h-83 {
     @media (width >= 64rem) {
       height: calc(var(--spacing) * 83);
+    }
+  }
+  .lg\:h-120 {
+    @media (width >= 64rem) {
+      height: calc(var(--spacing) * 120);
     }
   }
   .lg\:w-60 {
